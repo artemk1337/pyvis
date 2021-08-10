@@ -10,6 +10,7 @@ from collections import defaultdict
 import networkx as nx
 import json
 import jsonpickle
+import numpy
 import os
 
 
@@ -204,6 +205,8 @@ class Network(object):
         :type x: num (optional)
         :type y: num (optional)
         """
+        if isinstance(n_id, numpy.integer):
+            n_id = int(n_id)
         assert isinstance(n_id, str) or isinstance(n_id, int)
         if label:
             node_label = label
